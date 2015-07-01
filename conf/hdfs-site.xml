@@ -273,7 +273,7 @@
   </property>
   <property>
     <name>dfs.namenode.shared.edits.dir</name>
-    <value>qjournal://vide-hadoopm01:8485; vide-hadoopm02:8485; vide-hadoopm03:8485/bdp</value>
+    <value>qjournal://vide-hadoopm01:8485;vide-hadoopm02:8485;vide-hadoopm03:8485/bdp</value>
   </property>
   <property>
     <name>dfs.hosts</name>

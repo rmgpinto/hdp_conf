@@ -2116,7 +2116,7 @@
   </property>
   <property>
     <name>hive.zookeeper.quorum</name>
-    <value>vide-hadoopm01:2181, vide-hadoopm02:2181, vide-hadoopm03:2181</value>
+    <value>vide-hadoopm01.bdp.pt:2181,vide-hadoopm02.bdp.pt:2181,vide-hadoopm03.bdp.pt:2181</value>
     <description>List of ZooKeeper servers to talk to. This is needed for: 1. Read/write locks - when hive.lock.manager is set to org.apache.hadoop.hive.ql.lockmgr.zookeeper.ZooKeeperHiveLockManager, 2. When HiveServer2 supports service discovery via Zookeeper.</description>
   </property>
   <property>

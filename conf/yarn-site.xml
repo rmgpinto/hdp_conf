@@ -128,7 +128,7 @@
   </property>
   <property>
     <name>yarn.resourcemanager.zk-address</name>
-    <value>vide-hadoopm01.bdp.pt:2181, vide-hadoopm02.bdp.pt:2181</value>
+    <value>vide-hadoopm01.bdp.pt:2181,vide-hadoopm02.bdp.pt:2181</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.address</name>

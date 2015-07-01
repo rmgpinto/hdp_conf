@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Put site-specific property overrides in this file. -->
+<configuration xmlns:xi="http://www.w3.org/2001/XInclude">
+  <property>
+    <name>yarn.nodemanager.pmem-check-enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>true</value>
+  </property>
+  <!-- NodeManager -->
+  <property>
+    <name>yarn.nodemanager.address</name>
+    <value>0.0.0.0:45454</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.webapp.address</name>
+    <value>0.0.0.0:50060</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.vmem-pmem-ratio</name>
+    <value>2.1</value>
+    <description>Ratio between virtual memory to physical memory when
+    setting memory limits for containers. Container allocations are
+    expressed in terms of physical memory, and virtual memory usage
+    is allowed to exceed this allocation by this ratio.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.container-executor.class</name>
+    <value>org.apache.hadoop.yarn.server.nodemanager.DefaultContainerExecutor</value>
+    <description>ContainerExecutor for launching containers</description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+    <description>Auxilliary services of NodeManager</description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.container-monitor.interval-ms</name>
+    <value>3000</value>
+    <description>The interval, in milliseconds, for which the node manager
+    waits  between two cycles of monitoring its containers' memory usage.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.log.retain-second</name>
+    <value>604800</value>
+  </property>
+  <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.remote-app-log-dir</name>
+    <value>/app-logs</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+    <value>logs</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.log-aggregation.compression-type</name>
+    <value>gz</value>
+  </property>
+  <property>
+    <description>Store class name for history store, defaulting to file system store </description>
+    <name>yarn.timeline-service.generic-application-history.store-class</name>
+    <value>org.apache.hadoop.yarn.server.applicationhistoryservice.NullApplicationHistoryStore</value>
+  </property>
+  <!-- Use a directory that is set up on HDFS to store generic history -->
+  <property>
+    <description>URI pointing to the location of the FileSystem path where the history will be persisted. This must be supplied when using org.apache.hadoop.yarn.server.applicationhistoryservice.FileSystemApplicationHistoryStore as the value for yarn.timeline-service.generic-application-history.store-class</description>
+    <name>yarn.timeline-service.generic-application-history.fs-history-store.uri</name>
+    <value>/yarn/generic-history/</value>
+  </property>
+  <property>
+    <description>T-file compression types used to compress history data.</description>
+    <name>yarn.timeline-service.generic-application-history.fs-history-store.compression-type</name>
+    <value>none</value>
+  </property>
+  <property>
+    <description>Indicate to ResourceManager as well as clients whether
+    history-service is enabled or not. If enabled, ResourceManager starts
+    recording historical data that ApplicationHistory service can consume.
+    Similarly, clients can redirect to the history service when applications
+    finish if this is enabled.</description>
+    <name>yarn.timeline-service.generic-application-history.enabled</name>
+    <value>false</value>
+  </property>
+  <property>
+    <description>The hostname of the timeline server web application.</description>
+    <name>yarn.timeline-service.hostname</name>
+    <value>vide-hadoopm01.bdp.pt</value>
+  </property>
+  <property>
+    <description>Indicate to clients whether timeline service is enabled or not.
+    If enabled, clients will put entities and events to the timeline server.
+    </description>
+    <name>yarn.timeline-service.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.node-labels.fs-store.root-dir</name>
+    <value>/system/yarn/node-labels</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.automatic-failover.embedded</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.store.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.https.address</name>
+    <value>vide-hadoopm01.bdp.pt:8088</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.rm-ids</name>
+    <value>rm1,rm2</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.zk-address</name>
+    <value>vide-hadoopm01.bdp.pt:2181, vide-hadoopm02</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>vide-hadoopm01.bdp.pt:8088</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname.rm1</name>
+    <value>vide-hadoopm01</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.am.max-attempts</name>
+    <value>20</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.automatic-failover.zk-base-path</name>
+    <value>/yarn-leader-election</value>
+  </property>
+  <property>
+    <name>yarn.timeline-service.leveldb-timeline-store.path</name>
+    <value>c:\hadoop\logs\hadoop\timeline</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>vide-hadoopm01.bdp.pt</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.automatic-failover.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.client.failover-proxy-provider</name>
+    <value>org.apache.hadoop.yarn.client.ConfiguredRMFailoverProxyProvider</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.cluster-id</name>
+    <value>bdp</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>e:\hdpdata\hadoop\local</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>e:\hdpdata\hadoop\logs</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname.rm2</name>
+    <value>vide-hadoopm02</value>
+  </property>
+  <property>
+    <name>yarn.log.server.url</name>
+    <value>http://vide-hadoopm01.bdp.pt:19888/jobhistory/logs</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.recovery.enabled</name>
+    <value>true</value>
+  </property>
+</configuration>

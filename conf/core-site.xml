@@ -31,7 +31,7 @@
   </property>
   <property>
     <name>fs.trash.interval</name>
-    <value>360</value>
+    <value>0</value>
     <description>Number of minutes after which the checkpoint
       gets deleted.  If zero, the trash feature is disabled.
     </description>

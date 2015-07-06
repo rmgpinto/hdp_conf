@@ -208,4 +208,12 @@
     <name>mapred.job.tracker.history.completed.location</name>
     <value>/mapred/history/done</value>
   </property>
+  <property>
+    <name>mapreduce.map.cpu.vcores</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.cpu.vcores</name>
+    <value>1</value>
+  </property>
 </configuration>

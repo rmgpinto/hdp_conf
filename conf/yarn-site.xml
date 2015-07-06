@@ -195,7 +195,7 @@
     <value>2</value>
   </property>
   <property>
-  <name>yarn.timeline-service.webapp.address</name>
-  <value>vide-hadoopm01.bdp.pt:8188</value>
+    <name>yarn.timeline-service.webapp.address</name>
+    <value>vide-hadoopm01.bdp.pt:8188</value>
 </property>
 </configuration>

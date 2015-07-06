@@ -9,7 +9,7 @@
   </property>
   <property>
     <name>yarn.app.mapreduce.am.staging-dir</name>
-    <value>/mapred</value>
+    <value>/user</value>
   </property>
   <property>
     <name>mapreduce.job.hdfs-servers</name>

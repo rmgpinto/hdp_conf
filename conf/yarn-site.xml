@@ -198,8 +198,4 @@
     <name>yarn.timeline-service.webapp.address</name>
     <value>vide-hadoopm01.bdp.pt:8188</value>
   </property>
-  <property>
-    <name>tez.yarn.ats.enabled</name>
-    <value>true</value>
-  </property>
 </configuration>

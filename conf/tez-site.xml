@@ -289,9 +289,4 @@
     </description>
   </property>
 
-  <property>
-    <name>tez.yarn.ats.enabled</name>
-    <value>true</value>
-  </property>
-
 </configuration>

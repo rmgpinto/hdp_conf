@@ -198,11 +198,11 @@
   </property>
   <property>
     <name>mapreduce.reduce.java.opts</name>
-    <value>-Xmx756m</value>
+    <value>-Xmx2560m</value>
   </property>
   <property>
     <name>mapreduce.map.java.opts</name>
-    <value>-Xmx756m</value>
+    <value>-Xmx2560m</value>
   </property>
   <property>
     <name>mapred.job.tracker.history.completed.location</name>
@@ -215,5 +215,17 @@
   <property>
     <name>mapreduce.reduce.cpu.vcores</name>
     <value>1</value>
+  </property>
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>3584</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>3584</value>
+  </property>
+  <property>
+    <name>mapreduce.task.io.sort.mb</name>
+    <value>1280</value>
   </property>
 </configuration>

@@ -492,7 +492,7 @@
   </property>
   <property>
     <name>datanucleus.autoCreateSchema</name>
-    <value>true</value>
+    <value>false</value>
     <description>creates necessary schema on a startup if one doesn't exist. set this to false, after creating it once</description>
   </property>
   <property>
@@ -1576,7 +1576,7 @@
   </property>
   <property>
     <name>hive.tez.container.size</name>
-    <value>1364</value>
+    <value>3584</value>
     <description>By default Tez will spawn containers of the size of a mapper. This can be used to overwrite.</description>
   </property>
   <property>
@@ -1586,7 +1586,7 @@
   </property>
   <property>
     <name>hive.tez.java.opts</name>
-    <value>-server -Xms1024m -Xmx1024m -Djava.net.preferIPv4Stack=true -XX:NewRatio=8 -XX:+UseNUMA -XX:+UseParallelGC</value>
+    <value>-server -Xms1024m -Xmx2560m -Djava.net.preferIPv4Stack=true -XX:NewRatio=8 -XX:+UseNUMA -XX:+UseParallelGC</value>
     <description>By default Tez will use the Java options from map tasks. This can be used to overwrite.</description>
   </property>
   <property>
@@ -3190,7 +3190,7 @@
 
   <property>
     <name>hive.auto.convert.join.noconditionaltask.size</name>
-    <value>10000000</value>
+    <value>805306000</value>
     <description>
       If hive.auto.convert.join.noconditionaltask is off, this parameter does not take affect. 
       However, if it is on, and the sum of size for n-1 of the tables/partitions for a n-way join is smaller than this size, 

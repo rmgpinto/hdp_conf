@@ -35,7 +35,7 @@
 
   <property>
     <name>tez.am.resource.memory.mb</name>
-    <value>1536</value>
+    <value>3584</value>
     <description>The amount of memory to be used by the AppMaster.
       Used only if the value is not specified explicitly by the DAG definition.
     </description>
@@ -287,6 +287,11 @@
       Set to org.apache.tez.dag.history.logging.ats.ATSHistoryLoggingService to log to ATS
       Set to org.apache.tez.dag.history.logging.impl.SimpleHistoryLoggingService to log to the filesystem specified by ${fs.defaultFS}
     </description>
+  </property>
+
+  <property>
+    <name>tez.am.java.opts</name>
+    <value>-Xmx2560m</value>
   </property>
 
 </configuration>

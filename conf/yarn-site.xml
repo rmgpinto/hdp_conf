@@ -214,4 +214,24 @@
     <name>yarn.app.mapreduce.am.command-opts</name>
     <value>-Xmx2560m</value>
   </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.monitor.enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.monitor.policies</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.monitor.capacity.ProportionalCapacityPreemptionPolicy</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.monitoring_interval</name>
+    <value>3000</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.max_wait_before_kill</name>
+    <value>15000</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.total_preemption_per_round</name>
+    <value>0.1</value>
+  </property>
 </configuration>

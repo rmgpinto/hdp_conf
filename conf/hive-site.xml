@@ -197,7 +197,7 @@
   </property>
   <property>
     <name>hive.exec.dynamic.partition.mode</name>
-    <value>strict</value>
+    <value>nonstrict</value>
     <description>
       In strict mode, the user must specify at least one static partition 
       in case the user accidentally overwrites all partitions.
@@ -2046,7 +2046,7 @@
   </property>
   <property>
     <name>hive.stats.fetch.column.stats</name>
-    <value>false</value>
+    <value>true</value>
     <description>
       Annotation of operator tree with statistics information requires column statistics.
       Column statistics are fetched from metastore. Fetching column statistics for each needed column
@@ -2077,7 +2077,7 @@
   </property>
   <property>
     <name>hive.support.concurrency</name>
-    <value>false</value>
+    <value>true</value>
     <description>
       Whether Hive supports concurrency control or not. 
       A ZooKeeper instance must be up and running when using zookeeper Hive lock manager 
@@ -2144,7 +2144,7 @@
   </property>
   <property>
     <name>hive.txn.manager</name>
-    <value>org.apache.hadoop.hive.ql.lockmgr.DummyTxnManager</value>
+    <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
     <description />
   </property>
   <property>
@@ -2167,12 +2167,12 @@
   </property>
   <property>
     <name>hive.compactor.initiator.on</name>
-    <value>false</value>
+    <value>true</value>
     <description>Whether to run the compactor's initiator thread in this metastore instance or not.</description>
   </property>
   <property>
     <name>hive.compactor.worker.threads</name>
-    <value>0</value>
+    <value>2</value>
     <description>Number of compactor worker threads to run on this metastore instance.</description>
   </property>
   <property>
@@ -3001,7 +3001,7 @@
   </property>
   <property>
     <name>hive.vectorized.groupby.maxentries</name>
-    <value>100000</value>
+    <value>10240</value>
     <description>
       Max number of entries in the vector group by aggregation hashtables. 
       Exceeding this will trigger a flush irrelevant of memory pressure condition.
@@ -3032,7 +3032,7 @@
   </property>
   <property>
     <name>hive.prewarm.enabled</name>
-    <value>false</value>
+    <value>true</value>
     <description>Enables container prewarm for Tez (Hadoop 2 only)</description>
   </property>
   <property>
@@ -3209,7 +3209,7 @@
 
   <property>
     <name>hive.vectorized.execution.reduce.enabled</name>
-    <value>false</value>
+    <value>true</value>
     <description>
       This flag should be set to true to enable vectorized mode of the reduce-side of query execution.
       The default value is true.
@@ -3271,7 +3271,7 @@
 
   <property>
     <name>hive.server2.tez.initialize.default.sessions</name>
-    <value>false</value>
+    <value>true</value>
     <description>
       This flag is used in HiveServer2 to enable a user to use HiveServer2 without
       turning on Tez for HiveServer2. The user could potentially want to run queries

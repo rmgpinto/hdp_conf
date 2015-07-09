@@ -35,7 +35,7 @@
 
   <property>
     <name>tez.am.resource.memory.mb</name>
-    <value>3584</value>
+    <value>7168</value>
     <description>The amount of memory to be used by the AppMaster.
       Used only if the value is not specified explicitly by the DAG definition.
     </description>
@@ -291,7 +291,7 @@
 
   <property>
     <name>tez.am.java.opts</name>
-    <value>-Xmx2560m</value>
+    <value>-Xmx5120m</value>
   </property>
 
 </configuration>

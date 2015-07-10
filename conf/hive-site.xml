@@ -1586,7 +1586,7 @@
   </property>
   <property>
     <name>hive.tez.java.opts</name>
-    <value>-server -Xms5120m --Xmx5120m -Djava.net.preferIPv4Stack=true -XX:NewRatio=8 -XX:+UseNUMA -XX:+UseParallelGC</value>
+    <value>-server -Xms5120m -Xmx5120m -Djava.net.preferIPv4Stack=true -XX:NewRatio=8 -XX:+UseNUMA -XX:+UseParallelGC</value>
     <description>By default Tez will use the Java options from map tasks. This can be used to overwrite.</description>
   </property>
   <property>

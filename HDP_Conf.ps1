@@ -1,4 +1,10 @@
-param([String]$CommitMessage)
+[CmdletBinding()]
+Param(
+    [Parameter(Mandatory=$True,Position=1)]
+    [boolean]$Restart,    
+    [Parameter(Mandatory=$True)]
+    [string]$CommitMessage
+)
 
 $files = @(
     [pscustomobject]@{name="yarn-site.xml";location="hdp\hadoop-2.6.0.2.2.4.2-0002\etc\hadoop\yarn-site.xml"},
@@ -18,17 +24,12 @@ $nodes = @(
     "\\vide-hadoops02",
     "\\vide-hadoops03"
 )
-
-if ([string]::IsNullOrEmpty($CommitMessage)) {
-    Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Please provide commit message."
-    exit;
-}
-else {
-    Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Pushing files to GitHub..."
-    git config --global http.proxy http://ep-proxy.bportugal.pt:8080
-    git add .
-    git commit -m $CommitMessage
-    git push
+Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Pushing files to GitHub..."
+git config --global http.proxy http://ep-proxy.bportugal.pt:8080
+git add .
+git commit -m $CommitMessage
+git push
+if ($Restart == $True) {
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Stopping Hortonworks cluster..."
     Invoke-Command -computername vide-hadoopm01,vide-hadoopm02,vide-hadoopm03,vide-hadoops01,vide-hadoops02,vide-hadoops03 {c:\hdp\stop_local_hdp_services.cmd}
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Copying files to all cluster nodes"
@@ -44,5 +45,5 @@ else {
     Invoke-Command -computername vide-hadoopm02 {c:\hdp\start_local_hdp_services.cmd}
     Start-Sleep -s 30
     Invoke-Command -computername vide-hadoops01,vide-hadoops02,vide-hadoops03 {c:\hdp\start_local_hdp_services.cmd}
-    Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: All Done."
 }
+Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: All Done."

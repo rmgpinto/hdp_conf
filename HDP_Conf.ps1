@@ -29,7 +29,7 @@ git config --global http.proxy http://ep-proxy.bportugal.pt:8080
 git add .
 git commit -m $CommitMessage
 git push
-if ($Restart == $True) {
+if ($Restart -eq $True) {
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Stopping Hortonworks cluster..."
     Invoke-Command -computername vide-hadoopm01,vide-hadoopm02,vide-hadoopm03,vide-hadoops01,vide-hadoops02,vide-hadoops03 {c:\hdp\stop_local_hdp_services.cmd}
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Copying files to all cluster nodes"

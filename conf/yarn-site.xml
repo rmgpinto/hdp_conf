@@ -208,7 +208,7 @@
   </property>
   <property>
     <name>yarn.app.mapreduce.am.resource.mb</name>
-    <value>3584</value>
+    <value>7168</value>
   </property>
   <property>
     <name>yarn.app.mapreduce.am.command-opts</name>

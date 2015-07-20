@@ -1,7 +1,9 @@
 [CmdletBinding()]
 Param(
     [Parameter(Mandatory=$True,Position=1)]
-    [boolean]$Restart,    
+    [boolean]$Restart,
+    [Parameter(Mandatory=$True)]
+    [string]$Commit,
     [Parameter(Mandatory=$True)]
     [string]$CommitMessage
 )
@@ -24,11 +26,14 @@ $nodes = @(
     "\\vide-hadoops02",
     "\\vide-hadoops03"
 )
-Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Pushing files to GitHub..."
-git config --global http.proxy http://ep-proxy.bportugal.pt:8080
-git add .
-git commit -m $CommitMessage
-git push
+if ($Commit -eq $True)
+{
+    Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Pushing files to GitHub..."
+    git config --global http.proxy http://ep-proxy.bportugal.pt:8080
+    git add .
+    git commit -m $CommitMessage
+    git push
+}
 if ($Restart -eq $True) {
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Stopping Hortonworks cluster..."
     Invoke-Command -computername vide-hadoopm01,vide-hadoopm02,vide-hadoopm03,vide-hadoops01,vide-hadoops02,vide-hadoops03 {c:\hdp\stop_local_hdp_services.cmd}

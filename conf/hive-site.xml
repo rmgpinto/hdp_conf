@@ -169,7 +169,7 @@
   </property>
   <property>
     <name>hive.exec.parallel</name>
-    <value>false</value>
+    <value>true</value>
     <description>Whether to execute jobs in parallel</description>
   </property>
   <property>

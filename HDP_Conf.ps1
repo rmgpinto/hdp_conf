@@ -29,7 +29,6 @@ $nodes = @(
 if ($Commit -eq $True)
 {
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Pushing files to GitHub..."
-    git config --global http.proxy http://ep-proxy.bportugal.pt:8080
     git add .
     git commit -m $CommitMessage
     git push

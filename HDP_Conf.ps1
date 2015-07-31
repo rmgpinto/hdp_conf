@@ -46,9 +46,9 @@ if ($Restart -eq $True) {
         }
     }
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Starting Hortonworks cluster..."
-    Invoke-Command -computername vide-hadoopm01,vide-hadoopm03 {c:\hdp\start_local_hdp_services.cmd}
+    Invoke-Command -computername vide-hadoopm01.bdp.pt,vide-hadoopm03.bdp.pt {c:\hdp\start_local_hdp_services.cmd}
     Start-Sleep -s 60
-    Invoke-Command -computername vide-hadoopm02 {c:\hdp\start_local_hdp_services.cmd}
+    Invoke-Command -computername vide-hadoopm02.bdp.pt {c:\hdp\start_local_hdp_services.cmd}
     Start-Sleep -s 30
     Invoke-Command -computername vide-hadoops01,vide-hadoops02,vide-hadoops03,vide-hadoops04,vide-hadoops05 {c:\hdp\start_local_hdp_services.cmd}
 }

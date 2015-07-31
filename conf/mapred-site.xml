@@ -198,11 +198,11 @@
   </property>
   <property>
     <name>mapreduce.reduce.java.opts</name>
-    <value>-Xmx5120m</value>
+    <value>-Xmx3900m</value>
   </property>
   <property>
     <name>mapreduce.map.java.opts</name>
-    <value>-Xmx5120m</value>
+    <value>-Xmx3900m</value>
   </property>
   <property>
     <name>mapred.job.tracker.history.completed.location</name>
@@ -218,14 +218,14 @@
   </property>
   <property>
     <name>mapreduce.map.memory.mb</name>
-    <value>7168</value>
+    <value>4096</value>
   </property>
   <property>
     <name>mapreduce.reduce.memory.mb</name>
-    <value>7168</value>
+    <value>4096</value>
   </property>
   <property>
     <name>mapreduce.task.io.sort.mb</name>
-    <value>1792</value>
+    <value>1636</value>
   </property>
 </configuration>

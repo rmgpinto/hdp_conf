@@ -265,7 +265,7 @@
   </property>
   <property>
     <name>dfs.replication</name>
-    <value>3</value>
+    <value>5</value>
   </property>
   <property>
     <name>dfs.ha.automatic-failover.enabled</name>

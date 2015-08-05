@@ -19,14 +19,14 @@ $files = @(
 )
 
 $nodes = @(
-    "\\vide-hadoopm01",
-    "\\vide-hadoopm02",
-    "\\vide-hadoopm03",
-    "\\vide-hadoops01",
-    "\\vide-hadoops02",
-    "\\vide-hadoops03",
-    "\\vide-hadoops04",
-    "\\vide-hadoops05"
+    "\\vide-hadoopm01.bdp.pt",
+    "\\vide-hadoopm02.bdp.pt",
+    "\\vide-hadoopm03.bdp.pt",
+    "\\vide-hadoops01.bdp.pt",
+    "\\vide-hadoops02.bdp.pt",
+    "\\vide-hadoops03.bdp.pt",
+    "\\vide-hadoops04.bdp.pt",
+    "\\vide-hadoops05.bdp.pt"
 )
 if ($Commit -eq $True)
 {
@@ -37,7 +37,7 @@ if ($Commit -eq $True)
 }
 if ($Restart -eq $True) {
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Stopping Hortonworks cluster..."
-    Invoke-Command -computername vide-hadoopm01,vide-hadoopm02,vide-hadoopm03,vide-hadoops01,vide-hadoops02,vide-hadoops03,vide-hadoops04,vide-hadoops05 {c:\hdp\stop_local_hdp_services.cmd}
+    Invoke-Command -computername vide-hadoopm01.bdp.pt,vide-hadoopm02.bdp.pt,vide-hadoopm03.bdp.pt,vide-hadoops01.bdp.pt,vide-hadoops02.bdp.pt,vide-hadoops03.bdp.pt,vide-hadoops04.bdp.pt,vide-hadoops05.bdp.pt {c:\hdp\stop_local_hdp_services.cmd}
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Copying files to all cluster nodes"
     foreach ($file in $files) {
         foreach ($node in $nodes) {
@@ -46,10 +46,10 @@ if ($Restart -eq $True) {
         }
     }
     Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: Starting Hortonworks cluster..."
-    Invoke-Command -computername vide-hadoopm01,vide-hadoopm03 {c:\hdp\start_local_hdp_services.cmd}
+    Invoke-Command -computername vide-hadoopm01.bdp.pt,vide-hadoopm03.bdp.pt {c:\hdp\start_local_hdp_services.cmd}
     Start-Sleep -s 60
-    Invoke-Command -computername vide-hadoopm02 {c:\hdp\start_local_hdp_services.cmd}
+    Invoke-Command -computername vide-hadoopm02.bdp.pt {c:\hdp\start_local_hdp_services.cmd}
     Start-Sleep -s 30
-    Invoke-Command -computername vide-hadoops01,vide-hadoops02,vide-hadoops03,vide-hadoops04,vide-hadoops05 {c:\hdp\start_local_hdp_services.cmd}
+    Invoke-Command -computername vide-hadoops01.bdp.pt,vide-hadoops02.bdp.pt,vide-hadoops03.bdp.pt,vide-hadoops04.bdp.pt,vide-hadoops05.bdp.pt {c:\hdp\start_local_hdp_services.cmd}
 }
 Write-Host "$(Get-Date -Format HH:mm:ss) HDP_Conf: All Done."

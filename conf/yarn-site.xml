@@ -196,7 +196,7 @@
   </property>
   <property>
     <name>yarn.scheduler.minimum-allocation-mb</name>
-    <value>7168</value>
+    <value>64</value>
   </property>
   <property>
     <name>yarn.scheduler.maximum-allocation-mb</name>
@@ -208,11 +208,11 @@
   </property>
   <property>
     <name>yarn.app.mapreduce.am.resource.mb</name>
-    <value>7168</value>
+    <value>4096</value>
   </property>
   <property>
     <name>yarn.app.mapreduce.am.command-opts</name>
-    <value>-Xmx5120m</value>
+    <value>-Xmx3900m</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.monitor.enable</name>

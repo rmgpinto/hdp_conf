@@ -35,7 +35,7 @@
 
   <property>
     <name>tez.am.resource.memory.mb</name>
-    <value>7168</value>
+    <value>4096</value>
     <description>The amount of memory to be used by the AppMaster.
       Used only if the value is not specified explicitly by the DAG definition.
     </description>
@@ -270,7 +270,7 @@
 
   <property>
     <name>tez.runtime.io.sort.mb</name>
-    <value>512</value>
+    <value>1638</value>
     <description>The size of the sort buffer when output needs to be sorted</description>
   </property>
 
@@ -291,7 +291,7 @@
 
   <property>
     <name>tez.am.java.opts</name>
-    <value>-Xmx5120m</value>
+    <value>-Xmx3900m</value>
   </property>
 
 </configuration>

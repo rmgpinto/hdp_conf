@@ -196,15 +196,15 @@
   </property>
   <property>
     <name>yarn.scheduler.minimum-allocation-mb</name>
-    <value>64</value>
+    <value>128</value>
   </property>
   <property>
     <name>yarn.scheduler.maximum-allocation-mb</name>
-    <value>4096</value>
+    <value>28672</value>
   </property>
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
-    <value>4096</value>
+    <value>28672</value>
   </property>
   <property>
     <name>yarn.app.mapreduce.am.resource.mb</name>

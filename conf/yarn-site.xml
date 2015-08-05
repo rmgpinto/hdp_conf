@@ -200,11 +200,11 @@
   </property>
   <property>
     <name>yarn.scheduler.maximum-allocation-mb</name>
-    <value>28672</value>
+    <value>4096</value>
   </property>
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
-    <value>28672</value>
+    <value>4096</value>
   </property>
   <property>
     <name>yarn.app.mapreduce.am.resource.mb</name>

@@ -1576,7 +1576,11 @@
   </property>
   <property>
     <name>hive.tez.container.size</name>
+<<<<<<< HEAD
     <value>4096</value>
+=======
+    <value>4072</value>
+>>>>>>> master
     <description>By default Tez will spawn containers of the size of a mapper. This can be used to overwrite.</description>
   </property>
   <property>
@@ -1586,7 +1590,11 @@
   </property>
   <property>
     <name>hive.tez.java.opts</name>
+<<<<<<< HEAD
     <value>-server -Xms64m -Xmx3900m -Djava.net.preferIPv4Stack=true -XX:NewRatio=8 -XX:+UseNUMA -XX:+UseParallelGC</value>
+=======
+    <value>-server -Xms128m -Xmx3900m -Djava.net.preferIPv4Stack=true -XX:NewRatio=8 -XX:+UseNUMA -XX:+UseParallelGC</value>
+>>>>>>> master
     <description>By default Tez will use the Java options from map tasks. This can be used to overwrite.</description>
   </property>
   <property>
@@ -3261,7 +3269,7 @@
 
   <property>
     <name>hive.server2.tez.sessions.per.default.queue</name>
-    <value>1</value>
+    <value>4</value>
     <description>
       A positive integer that determines the number of Tez sessions that should be
       launched on each of the queues specified by "hive.server2.tez.default.queues".

@@ -3121,7 +3121,7 @@
   </property>
   <property>
     <name>hive.tez.auto.reducer.parallelism</name>
-    <value>false</value>
+    <value>true</value>
     <description>
       Turn on Tez' auto reducer parallelism feature. When enabled, Hive will still estimate data sizes
       and set parallelism estimates. Tez will sample source vertices' output sizes and adjust the estimates at runtime as

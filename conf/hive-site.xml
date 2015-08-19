@@ -3037,7 +3037,7 @@
   </property>
   <property>
     <name>hive.prewarm.numcontainers</name>
-    <value>20</value>
+    <value>2</value>
     <description>Controls the number of containers to prewarm for Tez (Hadoop 2 only)</description>
   </property>
   <property>

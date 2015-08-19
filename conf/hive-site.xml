@@ -3037,7 +3037,7 @@
   </property>
   <property>
     <name>hive.prewarm.numcontainers</name>
-    <value>2</value>
+    <value>20</value>
     <description>Controls the number of containers to prewarm for Tez (Hadoop 2 only)</description>
   </property>
   <property>
@@ -3059,7 +3059,7 @@
   </property>
   <property>
     <name>hive.server2.tez.default.queues</name>
-    <value>hive1,hive2,hive3,hive4,hive5</value>
+    <value>default</value>
     <description>
       A list of comma separated values corresponding to YARN queues of the same name.
       When HiveServer2 is launched in Tez mode, this configuration needs to be set
@@ -3261,7 +3261,7 @@
 
   <property>
     <name>hive.server2.tez.sessions.per.default.queue</name>
-    <value>3</value>
+    <value>1</value>
     <description>
       A positive integer that determines the number of Tez sessions that should be
       launched on each of the queues specified by "hive.server2.tez.default.queues".

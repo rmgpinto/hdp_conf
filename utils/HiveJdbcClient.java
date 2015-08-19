@@ -10,7 +10,11 @@ public class HiveJdbcClient {
 
 	public static void main(String[] args) throws SQLException {
 		float executionTime = ExecuteHiveQuery(args[0]);
-		ExecuteSQLQuery(executionTime);
+		if (args[1] != null)
+			ExecuteSQLInsertQuery(executionTime, args[1]);
+		else
+			ExecuteSQLQuery(executionTime);
+		
 	}
 	
 	public static float ExecuteHiveQuery(String query) throws SQLException {
@@ -41,6 +45,18 @@ public class HiveJdbcClient {
 		Connection conn = DriverManager.getConnection("jdbc:sqlserver://vide-hadoopm01;database=HadoopPerf;Username=hive;Password=bdp2015");
 		Statement stmt = conn.createStatement();
 		String query = "UPDATE HadoopPerf.dbo.TestCases SET ExecutionTime = " + executionTime + " WHERE Id = (SELECT MAX(Id) FROM HadoopPerf.dbo.TestCases)";
+		stmt.execute(query);
+	}
+	public static void ExecuteSQLQuery(float executionTime, string ConcurrentTestCase) throws SQLException {
+		try {
+			Class.forName(sqlDriverName);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
+		Connection conn = DriverManager.getConnection("jdbc:sqlserver://vide-hadoopm01;database=HadoopPerf;Username=hive;Password=bdp2015");
+		Statement stmt = conn.createStatement();
+		String query = "INSERT INTO HadoopPerf.dbo.ConcurrentTestCases (TestCase, ExecutionTime) VALUES ('" + ConcurrentTestCase + "', " + executionTime + ")";
 		stmt.execute(query);
 	}
 }

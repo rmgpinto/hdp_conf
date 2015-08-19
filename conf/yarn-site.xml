@@ -8,7 +8,7 @@
   </property>
   <property>
     <name>yarn.nodemanager.vmem-check-enabled</name>
-    <value>true</value>
+    <value>false</value>
   </property>
   <!-- NodeManager -->
   <property>
@@ -21,7 +21,7 @@
   </property>
   <property>
     <name>yarn.nodemanager.vmem-pmem-ratio</name>
-    <value>2.1</value>
+    <value>8</value>
     <description>Ratio between virtual memory to physical memory when
     setting memory limits for containers. Container allocations are
     expressed in terms of physical memory, and virtual memory usage

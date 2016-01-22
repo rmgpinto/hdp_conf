@@ -1,2 +1,1 @@
-# hdp_conf
-Hortonworks Cluster Configuration Files
+Automation of Hortonworks cluster configuration files deployment (internal PoC)
